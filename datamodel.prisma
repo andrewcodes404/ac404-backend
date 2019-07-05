@@ -1,0 +1,31 @@
+enum Permission {
+  ADMIN
+  USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMDELETE
+  PERMISSIONUPDATE
+}
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  permissions: [Permission] @scalarList(strategy:RELATION)
+}
+
+type Project {
+  id: ID! @id
+  name: String!
+  strapline: String!
+  websiteURL: String!
+  websiteImage: String!
+  brief: String
+  process: String
+  adobeUrl: String
+  githubUrl: String
+  cleanUrl: String!
+}

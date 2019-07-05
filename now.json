@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "ac404-yoga",
+    "builds": [
+        { "src": "src/index.js", "use": "@now/node-server" }
+    ],
+    "routes": [
+        { "src": "/.*", "dest": "src/index.js" }
+    ],
+    "env": {
+        "PRISMA_ENDPOINT":"@ac404_prisma_endpoint",
+        "PRISMA_SECRET":"@ac404_prisma_secret",
+        "FRONTEND_URL":"@ac404_frontend_url",
+        "APP_SECRET":"@ac404_app_secret"
+    }
+}

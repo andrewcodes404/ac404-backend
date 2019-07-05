@@ -1,0 +1,30 @@
+# import * from './schema_prep.graphql'
+
+type SuccessMessage {
+    message: String
+}
+
+type Mutation {
+    
+    createProject(
+        name: String
+        strapline: String
+        websiteURL: String
+        websiteImage: String
+        brief: String
+        process: String
+        adobeUrl: String
+        githubUrl: String
+        cleanUrl: String
+    ): Project!
+
+    signup(email: String!, password: String!, name: String!): User!
+    login(email: String!, password: String!): User!
+    logout: SuccessMessage
+}
+
+type Query {
+    users: [User]!
+    projects: [Project]!
+    user: User
+}
